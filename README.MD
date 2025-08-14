@@ -3,10 +3,9 @@
 **Text-to-Learn** is a full-stack, AI-powered course generator web app that transforms any user-submitted topic into a structured, multi-module online course. Designed for self-learners and content creators, it uses LLMs to generate course outlines, lessons, videos, MCQs, and even Hinglish audio explanations — all rendered in a responsive UI and downloadable as PDFs.
 
 ---
-![App Screenshot](/assets/ss-1.png)
-(/assets/ss-2.png)
-(/assets/ss-3.png)
-
+![App Preview](client/public/assets/ss-1.png)
+![App Preview](client/public/assets/ss-2.png)
+![App Preview](client/public/assets/ss-3.png)
 
 ## 🧩 Tech Stack
 
