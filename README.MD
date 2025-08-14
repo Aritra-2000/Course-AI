@@ -4,7 +4,13 @@
 
 ---
 <p align="center">
-  <img src="client/public/assets/SS-1.png" alt="App Screenshot" width="700">
+  <img src="client/public/assets/SS-1.png" alt="App Screenshot" width="400">
+</p>
+<p align="center">
+  <img src="client/public/assets/SS-2.png" alt="App Screenshot" width="400">
+</p>
+<p align="center">
+  <img src="client/public/assets/SS-3.png" alt="App Screenshot" width="400">
 </p>
 
 
