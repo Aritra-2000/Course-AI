@@ -8,7 +8,7 @@ import Dashboard from './pages/Dashboard';
 import EditCourse from './pages/EditCourse';
 import EditLesson from './pages/EditLesson';
 import Navbar from './components/UI/Navbar';
-import ProtectedRoute from './components/auth/ProtectedRoute';
+import ProtectedRoute from './components/Authentication/ProtectedRoute';
 
 function App() {
   return (
