@@ -4,7 +4,7 @@
 
 ---
 <p align="center">
-  <img src="client/public/assets/ss-1.png" alt="App Screenshot" width="700">
+  <img src="client/public/assets/SS-1.png" alt="App Screenshot" width="700">
 </p>
 
 
