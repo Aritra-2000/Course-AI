@@ -53,75 +53,6 @@
 
 ---
 
-## 🗃️ Project Structure
-
-### Frontend (`/client`)
-
-```
-client/
-├── public/
-│   ├── index.html
-│   └── favicon.ico
-├── src/
-│   ├── components/
-│   │   ├── Auth/
-│   │   ├── Course/
-│   │   ├── Lesson/
-│   │   └── UI/
-│   ├── pages/
-│   │   ├── Home.jsx
-│   │   ├── Course.jsx
-│   │   ├── Lesson.jsx
-│   │   └── Auth.jsx
-│   ├── services/
-│   │   ├── api.js
-│   │   └── auth.js
-│   ├── utils/
-│   │   ├── pdfGenerator.js
-│   │   └── helpers.js
-│   ├── styles/
-│   │   └── index.css
-│   ├── App.jsx
-│   └── main.jsx
-├── package.json
-└── vite.config.js
-```
-
-### Backend (`/server`)
-
-```
-server/
-├── controllers/
-│   ├── courseController.js
-│   ├── lessonController.js
-│   └── authController.js
-├── models/
-│   ├── Course.js
-│   ├── Lesson.js
-│   └── User.js
-├── routes/
-│   ├── courseRoutes.js
-│   ├── lessonRoutes.js
-│   └── authRoutes.js
-├── middleware/
-│   ├── auth.js
-│   └── validation.js
-├── services/
-│   ├── openaiService.js
-│   ├── geminiService.js
-│   └── youtubeService.js
-├── utils/
-│   ├── database.js
-│   └── helpers.js
-├── config/
-│   └── environment.js
-├── app.js
-├── server.js
-└── package.json
-```
-
----
-
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -330,77 +261,6 @@ server/
   ]
 }
 ```
-
-### Hinglish Audio
-
-- **Gemini API** - Generates Hinglish explanations
-- **Text-to-Speech** - Converts explanations to audio
-- **Audio Player** - Browser-based audio playback
-
----
-
-## 📊 Database Schema
-
-### User Model
-```javascript
-{
-  _id: ObjectId,
-  sub: String, // Google User ID
-  email: String,
-  name: String,
-  courses: [Course], // Array of course references
-  createdAt: Date,
-  updatedAt: Date
-}
-```
-
-### Course Model
-```javascript
-{
-  _id: ObjectId,
-  title: String,
-  description: String,
-  creator: String, // Google sub
-  modules: [Module], // Array of module references
-  tags: [String], // Array of course tags
-  createdAt: Date,
-  updatedAt: Date
-}
-```
-
-### Module Model
-```javascript
-{
-  _id: ObjectId,
-  title: String,
-  course: ObjectId, // Parent Course reference
-  lessons: [Lesson], // Array of lesson references
-  createdAt: Date,
-  updatedAt: Date
-}
-```
-
-### Lesson Model
-```javascript
-{
-  _id: ObjectId,
-  title: String,
-  objectives: [String], // Learning objectives
-  content: [{ // Content blocks
-    type: String, // 'heading', 'paragraph', 'code', 'video', 'mcq'
-    text: String, // Content text
-    // Additional properties based on type
-    // For MCQ: options, correctAnswer
-    // For Video: videoUrl, videoId
-    // For Code: language, code
-  }],
-  isEnriched: Boolean, // Whether AI has enriched the content
-  module: ObjectId, // Parent Module reference
-  createdAt: Date,
-  updatedAt: Date
-}
-```
-
 ---
 
 ## 🔒 Security Features
@@ -429,21 +289,7 @@ server/
 3. Configure build commands and start script
 4. Deploy with automatic scaling
 
----
-
-## 🧪 Testing
-
-### Frontend Testing
-- **Jest** - Unit testing framework
-- **React Testing Library** - Component testing
-- **Cypress** - End-to-end testing
-
-### Backend Testing
-- **Jest** - Unit and integration testing
-- **Supertest** - API endpoint testing
-- **MongoDB Memory Server** - Database testing
-
----
+-----
 
 ## 📈 Performance Optimization
 
@@ -480,8 +326,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 👨‍💻 Author
 
 **Aritra Dev**
-- GitHub: [@aritra-dev](https://github.com/aritra-dev)
-- LinkedIn: [Aritra Dev](https://linkedin.com/in/aritra-dev)
+- GitHub: [@aritra-dev](https://github.com/aritra-2000)
+- LinkedIn: [Aritra Dev](https://linkedin.com/in/aritra-paul-ok)
 
 ---
 
