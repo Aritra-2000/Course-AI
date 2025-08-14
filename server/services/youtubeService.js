@@ -17,7 +17,7 @@ async function findVideoForLesson(lessonTitle) {
       part: 'snippet',
       q: `${lessonTitle} tutorial explained simply`,
       type: 'video',
-      videoDuration: 'short', // 4-20 minutes
+      videoDuration: 'short',
       maxResults: 1,
     });
 
@@ -28,7 +28,6 @@ async function findVideoForLesson(lessonTitle) {
 
   } catch (error) {
     console.error('Error searching YouTube:', error.message);
-    // Don't block lesson generation if YouTube API fails
     return null;
   }
 }
