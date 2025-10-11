@@ -4,7 +4,7 @@ require('dotenv').config();
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 const model = genAI.getGenerativeModel({
-  model: 'gemini-1.5-flash',
+  model: 'gemini-2.0-flash',
   safetySettings: [
     {
       category: HarmCategory.HARM_CATEGORY_HARASSMENT,
@@ -48,7 +48,17 @@ async function generateCourseOutline(topic) {
     return JSON.parse(cleaned);
   } catch (error) {
     console.error('Error generating course outline from Gemini:', error);
-    throw new Error('Failed to generate course outline from Gemini.');
+    
+    // Check for specific error types
+    if (error.message && error.message.includes('API key')) {
+      throw new Error('AI service API key is invalid or has expired. Please check your configuration.');
+    } else if (error.message && error.message.includes('quota')) {
+      throw new Error('AI service quota exceeded. Please try again later or check your API limits.');
+    } else if (error.message && error.message.includes('billing')) {
+      throw new Error('AI service billing issue. Please check your account status.');
+    } else {
+      throw new Error(`AI service error: ${error.message || 'Unknown error occurred'}`);
+    }
   }
 }
 
@@ -90,7 +100,17 @@ async function generateLessonContent(lessonTitle) {
     return parsed[Object.keys(parsed)[0]];
   } catch (error) {
     console.error('Error generating lesson content from Gemini:', error);
-    throw new Error('Failed to generate lesson content from Gemini.');
+    
+    // Check for specific error types
+    if (error.message && error.message.includes('API key')) {
+      throw new Error('AI service API key is invalid or has expired. Please check your configuration.');
+    } else if (error.message && error.message.includes('quota')) {
+      throw new Error('AI service quota exceeded. Please try again later or check your API limits.');
+    } else if (error.message && error.message.includes('billing')) {
+      throw new Error('AI service billing issue. Please check your account status.');
+    } else {
+      throw new Error(`AI service error: ${error.message || 'Unknown error occurred'}`);
+    }
   }
 }
 
