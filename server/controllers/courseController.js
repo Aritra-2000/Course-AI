@@ -114,6 +114,17 @@ exports.createCourse = async (req, res) => {
     res.status(201).json({ message: 'Course created successfully', courseId: course._id });
   } catch (error) {
     console.error(`Error creating course: ${error.message}`);
+    
+    // Check if it's an AI service error and pass through the specific message
+    if (error.message && (
+      error.message.includes('AI service') || 
+      error.message.includes('API key') || 
+      error.message.includes('quota') || 
+      error.message.includes('billing')
+    )) {
+      return res.status(500).json({ message: error.message });
+    }
+    
     res.status(500).json({ message: 'Server error during course creation' });
   }
 };

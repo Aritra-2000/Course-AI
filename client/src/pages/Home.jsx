@@ -27,7 +27,9 @@ const Home = () => {
       const res = await api.post('/api/courses', { topic });
       navigate(`/course/${res.data.courseId}`);
     } catch (err) {
-      setError('Failed to generate the course. The topic might be too broad or there was a server issue. Please try again.');
+      // Use the specific error message from the server if available
+      const errorMessage = err.response?.data?.message || 'Failed to generate the course. The topic might be too broad or there was a server issue. Please try again.';
+      setError(errorMessage);
       console.error(err);
     } finally {
       setLoading(false);
